@@ -1,11 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 
-const Button = ({ type, children }) => {
-  const cls = classNames({
-    button: true,
-    'button--outline': type,
-  });
+const Button = ({ onClick, className, children }) => {
+  const cls = classNames('button', className, {});
   return <button className={cls}> {children} </button>;
 };
 
