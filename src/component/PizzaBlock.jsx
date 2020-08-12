@@ -71,8 +71,8 @@ const PizzaBlock = ({ name, price, imageUrl, types, sizes }) => {
 
 PizzaBlock.propTypes = {
   name: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
+  imageUrl: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
 };
 
 export default PizzaBlock;
