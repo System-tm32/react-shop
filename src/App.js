@@ -1,13 +1,13 @@
 import React from 'react';
 import axios from 'axios';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { Header } from './component';
 import { Home, Cart } from './pages';
 import { Route } from 'react-router-dom';
 import { setPizzas } from './store/actions/pizzas';
 
-function App({ items }) {
+function App() {
   const dispatch = useDispatch();
 
   React.useEffect(() => {
@@ -21,7 +21,7 @@ function App({ items }) {
       <Header />
       <div className="content">
         <Route path="/" exact>
-          <Home items={items} />
+          <Home />
         </Route>
         <Route path="/cart" component={Cart} exact />
       </div>
@@ -30,17 +30,3 @@ function App({ items }) {
 }
 
 export default App;
-
-// const mapStateToProps = (state) => {
-//   return {
-//     items: state.pizzas.items,
-//   };
-// };
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     setPizzas: (items) => dispatch(setPizzas(items)),
-//   };
-// };
-
-// export default connect(mapStateToProps, mapDispatchToProps)(App);
